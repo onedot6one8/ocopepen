@@ -3,15 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Playground</title>
-    <link rel="icon" href="https://ipfs.io/ipfs/bafybeibxdkgk2skfquxdegafxugnqd64wwkqzvmroh3ptofff2mmhawxwe/Tlogo.svg" type="image/svg+xml">
+    <title>OcOpepen</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body class="generate">
     <div id="loadedContent"></div>
-    <style>
-    </style>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.6.0/ethers.umd.min.js"></script>
@@ -20,23 +18,17 @@
     <script src="https://cdn.jsdelivr.net/npm/jsgif@1.0.2/libgif.min.js"></script>
 
     <script type="module">
-      import { alchemyApiKey } from "./public_anyway.js";
+      import { alchemyApiKey } from "./env.js";
       $(function () {
         $("#loadedContent").load("body.html", function () {
           $.getScript("scripts.js");
 
-          // const titleLabel = $('.title-label');
-          // titleLabel.text('Generating live from 4 contracts'); 
-          
-          
-          $('.title-label').html('Generating <span style="color: green;">live </span>onChain from 4 <a href="your-link-here";  style="color: inherit; text-decoration: none;">contracts</a>');
-
-
-          
+          // const web3 = new Web3(window.ethereum);
           const contractAddress = "0x9924b76b3d8e1Bc168496eC4a292F111E7Ee9FCE";
           const contractAbi = [{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"inputs":[{"internalType":"address","name":"_color_addr","type":"address"}],"name":"_setAddr","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_filler_addr","type":"address"}],"name":"_setFillerAddr","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"uint256","name":"randomNumber","type":"uint256"}],"name":"generateURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"}];
-          const providerUrl = `https://eth-goerli.g.alchemy.com/v2/${alchemyApiKey}`;
+
           console.log(alchemyApiKey);
+          const providerUrl = `https://eth-goerli.g.alchemy.com/v2/${alchemyApiKey}`;
           const web3 = new Web3(new Web3.providers.HttpProvider(providerUrl));
 
           const contractInstance = new web3.eth.Contract(
@@ -45,7 +37,7 @@
           );
 
           const generateButton = document.getElementById("generateButton");
-  
+          // const generateButtonLabel = document.getElementById('generateButtonLabel');
           const resultDiv = document.getElementById("result");
           const captureButton = document.getElementById("captureButton");
           const captureFramesButton = document.getElementById(
@@ -103,8 +95,6 @@
               gifButton.style.display = "block";
               XgifButton.style.display = "block";
               generateButton.textContent = "Regenerate OcOpepen";
-              
-              
             } catch (error) {
               resultDiv.innerHTML = `Error: ${error.message}`;
             }
@@ -114,26 +104,29 @@
             loadingCircle.style.display = "block";
 
             try {
-              const svgElement = svgImage; 
+              const svgElement = svgImage; // Get the SVG element
               console.log(svgElement);
               if (!svgElement) return;
 
-    
+              // Convert SVG to canvas using html2canvas
               const canvas = await html2canvas(svgElement);
 
+              // Create a temporary anchor element and trigger download
               const downloadLink = document.createElement("a");
 
+              // Convert canvas to data URL (GIF format)
               canvas.toBlob(async (blob) => {
                 downloadLink.href = URL.createObjectURL(blob);
                 downloadLink.download = name;
                 downloadLink.click();
 
+                // Release the object URL
                 URL.revokeObjectURL(downloadLink.href);
               }, "image/png");
 
               loadingCircle.style.display = "none";
             } catch (error) {
-
+              // Handle errors and hide the loading bar
               loadingCircle.style.display = "none";
             }
           });
@@ -142,35 +135,35 @@
             loadingCircle.style.display = "block";
 
             try {
-              const svgElement = svgImage; 
+              const svgElement = svgImage; // Get the SVG element
               console.log(svgElement);
               if (!svgElement) return;
 
-              const numberOfImages = 5; 
-              const captureInterval = 1000;
+              const numberOfImages = 5; // Number of images to capture
+              const captureInterval = 1000; // 1 second in milliseconds
 
-              const imagePromises = []; 
+              const imagePromises = []; // Array to store captured image promises
 
-              
+              // Capture images at the specified interval
               for (let i = 0; i < numberOfImages; i++) {
                 await new Promise((resolve) =>
                   setTimeout(resolve, captureInterval)
-                ); 
+                ); // Wait for the interval
 
-                
+                // Convert SVG to canvas using html2canvas
                 const canvas = await html2canvas(svgElement);
 
-                
+                // Create a temporary anchor element and trigger download
                 const downloadLink = document.createElement("a");
 
-                
+                // Convert canvas to data URL (PNG format)
                 const imagePromise = new Promise((resolve) => {
                   canvas.toBlob((blob) => {
                     downloadLink.href = URL.createObjectURL(blob);
                     downloadLink.download = name + `-${i + 1}.png`;
                     downloadLink.click();
 
-                
+                    // Release the object URL
                     URL.revokeObjectURL(downloadLink.href);
                     resolve();
                   }, "image/png");
@@ -181,7 +174,7 @@
               await Promise.all(imagePromises);
               loadingCircle.style.display = "none";
             } catch (error) {
-              
+              // Handle errors and hide the loading bar
               loadingCircle.style.display = "none";
             }
           });
@@ -190,48 +183,49 @@
             loadingCircle.style.display = "block";
 
             try {
-              const svgElement = svgImage; 
+              const svgElement = svgImage; // Get the SVG element
               console.log(svgElement);
               if (!svgElement) return;
 
-              const captureDuration = 5000; 
-              const captureInterval = 1000 / 30; 
+              const captureDuration = 5000; // 5 seconds in milliseconds
+              const captureInterval = 1000 / 30; // 30 frames per second
 
               const numberOfImages = Math.floor(
                 captureDuration / captureInterval
               );
 
-              const imagePromises = []; 
+              const imagePromises = []; // Array to store captured image promises
 
-              
+              // Get SVG dimensions
+              // const svgWidth = svgElement.width;
               const svgWidth = 1000;
               console.log(svgWidth);
-              
+              // const svgHeight = svgElement.height;
               const svgHeight = 1000;
               console.log(svgHeight);
 
-              
+              // Capture images at the specified interval
               for (let i = 0; i < numberOfImages; i++) {
-              
+                // Create a new canvas element
                 const canvas = document.createElement("canvas");
                 canvas.width = svgWidth;
                 canvas.height = svgHeight;
 
-              
+                // Get canvas context
                 const context = canvas.getContext("2d");
 
-              
+                // Draw the SVG image on the canvas
                 context.drawImage(svgElement, 0, 0, svgWidth, svgHeight);
 
                 imagePromises.push(canvas);
 
-              
+                // Wait for the capture interval
                 await new Promise((resolve) =>
                   setTimeout(resolve, captureInterval)
                 );
               }
 
-              
+              // Convert captured images to GIF
               const gif = new GIF({
                 workers: 10,
                 quality: 10,
@@ -248,14 +242,14 @@
                 downloadLink.href = URL.createObjectURL(blob);
                 downloadLink.download = name + ".gif";
 
-              
+                // Trigger the download
                 downloadLink.click();
                 loadingCircle.style.display = "none";
               });
 
               gif.render();
             } catch (error) {
-              
+              // Handle errors and hide the loading bar
               loadingCircle.style.display = "none";
             }
           });
@@ -266,48 +260,49 @@
             loadingCircle.style.display = "block";
 
             try {
-              const svgElement = svgImage; 
+              const svgElement = svgImage; // Get the SVG element
               console.log(svgElement);
               if (!svgElement) return;
 
-              const captureDuration = 5000; 
-              const captureInterval = 1000 / 30; 
+              const captureDuration = 5000; // 5 seconds in milliseconds
+              const captureInterval = 1000 / 30; // 30 frames per second
 
               const numberOfImages = Math.floor(
                 captureDuration / captureInterval
               );
 
-              const imagePromises = []; 
+              const imagePromises = []; // Array to store captured image promises
 
-              
+              // Get SVG dimensions
+              // const svgWidth = svgElement.width;
               const svgWidth = 500;
               console.log(svgWidth);
-              
+              // const svgHeight = svgElement.height;
               const svgHeight = 500;
               console.log(svgHeight);
 
-              
+              // Capture images at the specified interval
               for (let i = 0; i < numberOfImages; i++) {
-                
+                // Create a new canvas element
                 const canvas = document.createElement("canvas");
                 canvas.width = svgWidth;
                 canvas.height = svgHeight;
 
-                
+                // Get canvas context
                 const context = canvas.getContext("2d");
 
-                
+                // Draw the SVG image on the canvas
                 context.drawImage(svgElement, 0, 0, svgWidth, svgHeight);
 
                 imagePromises.push(canvas);
 
-                
+                // Wait for the capture interval
                 await new Promise((resolve) =>
                   setTimeout(resolve, captureInterval)
                 );
               }
 
-              
+              // Convert captured images to GIF
               const gif = new GIF({
                 workers: 10,
                 quality: 10,
@@ -324,14 +319,14 @@
                 downloadLink.href = URL.createObjectURL(blob);
                 downloadLink.download = name + ".gif";
 
-                
+                // Trigger the download
                 downloadLink.click();
                 loadingCircle.style.display = "none";
               });
 
               gif.render();
             } catch (error) {
-              
+              // Handle errors and hide the loading bar
               loadingCircle.style.display = "none";
             }
           });

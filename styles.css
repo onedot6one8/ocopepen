@@ -217,7 +217,7 @@
 
     .navigation {
       display: grid;
-      grid-template-columns: repeat(6, auto);
+      grid-template-columns: repeat(5, auto);
       gap: 50px;
       padding: 10px 15px;
       z-index: 2;
@@ -491,7 +491,7 @@
 
     .intro .logo img
     {
-       content: url('https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/full-white.png?v=1691751264133');
+       content: url('https://ipfs.io/ipfs/bafybeibxdkgk2skfquxdegafxugnqd64wwkqzvmroh3ptofff2mmhawxwe/logo-white.png');
 
     }
 

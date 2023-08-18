@@ -34,12 +34,12 @@ const XgifButton = document.getElementById("XgifButton");
     }
   });
 
- videoBackground.src = "https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/wp-dark-n.mp4?v=1692241810911";
+ videoBackground.src = "https://ipfs.io/ipfs/bafybeibxdkgk2skfquxdegafxugnqd64wwkqzvmroh3ptofff2mmhawxwe/wp-dark-n.mp4";
     
     modeLabel.textContent = "Dark";
     modeLabel.style.color = "grey";
     modeLabel.style.textShadow = "0px 0px 10px rgba(255, 255, 255, 1)";
-    logo.src = "https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/full-white.png?v=1691751264133";
+    logo.src = "https://ipfs.io/ipfs/bafybeibxdkgk2skfquxdegafxugnqd64wwkqzvmroh3ptofff2mmhawxwe/logo-white.png";
     
     
     
@@ -74,12 +74,12 @@ modeToggle.addEventListener('change', () => {
   if (!modeToggle.checked) {
     // Dark mode
     // videoBackground.src = "https://cdn.glitch.global/83adb88b-1275-4a82-9f5a-6a4bc3109e89/wp-dark.mp4?v=1691625806514";
-    videoBackground.src = "https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/wp-dark-n.mp4?v=1692241810911";
+    videoBackground.src = "https://ipfs.io/ipfs/bafybeibxdkgk2skfquxdegafxugnqd64wwkqzvmroh3ptofff2mmhawxwe/wp-dark-n.mp4";
     
     modeLabel.textContent = "Dark";
     modeLabel.style.color = "grey";
     modeLabel.style.textShadow = "0px 0px 10px rgba(255, 255, 255, 1)";
-    logo.src = "https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/full-white.png?v=1691751264133";
+    logo.src = "https://ipfs.io/ipfs/bafybeibxdkgk2skfquxdegafxugnqd64wwkqzvmroh3ptofff2mmhawxwe/logo-white.png";
     
     
     
@@ -114,10 +114,10 @@ modeToggle.addEventListener('change', () => {
     
   } else {
     // Light mode
-    videoBackground.src = "https://cdn.glitch.global/83adb88b-1275-4a82-9f5a-6a4bc3109e89/wp-white.mp4?v=1691625803677";
+    videoBackground.src = "https://ipfs.io/ipfs/bafybeibxdkgk2skfquxdegafxugnqd64wwkqzvmroh3ptofff2mmhawxwe/wp-white.mp4";
     modeLabel.textContent = "Light";
     modeLabel.style.color = "black";
-    logo.src = "https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/full-black.png?v=1691751352193";
+    logo.src = "https://ipfs.io/ipfs/bafybeibxdkgk2skfquxdegafxugnqd64wwkqzvmroh3ptofff2mmhawxwe/logo-black.png";
     
     
     title.style.color = "#333333";
