@@ -29,7 +29,7 @@ const XgifButton = document.getElementById("XgifButton");
 
   navigationLinks.forEach(link => {
     const href = link.getAttribute('href');
-    if (href && href.includes('.html') && currentPath.endsWith(href)) {
+    if (href && currentPath.endsWith(href)) {
       link.classList.add('active');
     }
   });
