@@ -1,1 +1,161 @@
-1.618/
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OcOpepen</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="index">
+    <div id="loadedContent"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      body {
+        height: 50%;
+        overflow-y: hidden;
+        overflow-x: hidden; 
+      }
+    
+
+  
+    .cards {
+      list-style: none;
+      white-space: nowrap;
+      max-width: calc(var(--cover-size) * 6 );
+      overflow: scroll;
+      height: 100vh;
+      display: flex; 
+      justify-content: center; 
+      align-items: center;
+      width: 100%;
+      margin: 0 auto;
+      top: -10%;
+      position: absolute;
+      z-index: -1;
+
+    }
+
+      .cards li {
+        display: inline-block;
+        width: var(--cover-size);
+        aspect-ratio: 1;
+      }
+
+      .cards {
+        scroll-snap-type: x mandatory;
+      }
+
+      .cards li {
+        scroll-snap-align: center;
+        view-timeline-name: --li-in-and-out-of-view;
+        view-timeline-axis: inline;
+        animation: linear adjust-z-index both;
+        animation-timeline: --li-in-and-out-of-view;
+        perspective: 40em;
+      }
+
+      .cards li > object {
+        width: 100px;
+        height: 100px;
+        -webkit-box-reflect: below 0.5em linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.4));
+        animation: linear rotate-cover both;
+        animation-timeline: --li-in-and-out-of-view;
+      }
+      
+      
+      @media (max-width: 820px) {
+        .cards{
+          width: 90%;
+        }
+      .cards li > object {
+         height: 50px;
+          width: 50px;
+      }
+    }
+
+      @keyframes adjust-z-index {
+        0% {
+          z-index: 1;
+        }
+        50% {
+          z-index: 100;
+        }
+        100% {
+          z-index: 1;
+        }
+      }
+
+      @keyframes rotate-cover {
+        0% {
+          transform: translateX(-100%) rotateY(-45deg);
+        }
+        35% {
+          transform: translateX(0) rotateY(-45deg);
+        }
+        50% {
+          transform: rotateY(0deg) translateZ(1em) scale(1.5);
+        }
+        65% {
+          transform: translateX(0) rotateY(45deg);
+        }
+        100% {
+          transform: translateX(100%) rotateY(45deg);
+        }
+      }
+  
+  
+  
+</style>
+
+<ul class="cards">
+    <li>
+      <object data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/site5.svg?v=1692144981242" type="image/svg+xml"></object>
+    </li>
+    <li>
+      <object data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/site3.svg?v=1692144974876" type="image/svg+xml"></object>
+    </li>
+    <li>
+      <object data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/site6.svg?v=1692144991917" type="image/svg+xml"></object>
+    </li>
+    <li>
+      <object data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/site4.svg?v=1692144987950" type="image/svg+xml"></object>
+    </li>
+    <li>
+      <object data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/REdflames.svg?v=1692148918194" type="image/svg+xml"></object>
+    </li>
+    <li>
+      <object data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/black.svg?v=1692148873113" type="image/svg+xml"></object>
+    </li>
+    <li>
+      <object data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/download.svg?v=1692148875714" type="image/svg+xml"></object>
+    </li>
+    <li>
+      <object data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/site2.svg?v=1692144969283" type="image/svg+xml"></object>
+    </li>
+    <li>
+      <object data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/gg1.svg?v=1692148977185" type="image/svg+xml"></object>
+    </li>
+    <li>
+      <object data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/threadopepe.svg?v=1692149177238" type="image/svg+xml"></object>
+    </li>
+    <li>
+      <object data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/ggg8.svg?v=1692149911574" type="image/svg+xml"></object>
+    </li>
+  
+  
+</ul>
+    <script>
+      $(function () {
+        $("#loadedContent").load("body.html", function () {
+          $.getScript("scripts.js");
+
+          const enterButton = document.getElementById("enterButton");
+          enterButton.addEventListener("click", async () => {
+            console.log("Enter button clicked");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

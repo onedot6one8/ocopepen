@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OcOpepen</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    
+     .onedot6one8 {
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      cursor: pointer;
+      margin: 0 auto;
+      width: 100px;
+      bottom: 0%;
+      left: 50%;
+      transform: translate(-50%) rotate(270deg) scaleX(-1) ;
+      position: fixed;
+    }
+
+   @media (max-width: 820px) {
+      .onedot6one8 {
+         height: 100px;
+          width: 100px;
+      }
+    }
+    
+    .title {
+      margin-bottom: -13%;
+      color: white;
+      text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+    }
+  
+    #svgContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      margin: 0 auto;
+      top: 23%;
+      position: absolute;
+      z-index: 1;
+    }
+  
+
+    .svgItem {
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+      cursor: pointer;
+      margin: 10px;
+    }
+    
+    .svgObject {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+    
+    
+    @media (max-width: 1000px) {
+      .title {
+      margin-bottom: 70%;
+/*       margin-left: -15%; */
+/*       left: 0; */
+      font-size: 40px;
+    }
+      
+      .svgItem {
+        border-radius: 0px;
+      }
+      .svgObject {
+        border-radius: 0px;
+      }
+    }
+
+    
+    .title-intro {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      font-size: 40px;
+      position: absolute;
+      top: 20%; 
+      left: 2%;
+      color: white;
+      text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+    }
+    
+    .contracts {
+      font-size: 30px;
+    }
+
+    .glitches {
+      font-size: 50px;
+    }
+
+    .collection {
+      font-size: 70px;
+    }
+
+    @media (max-width: 1000px) {
+      .title-intro {
+        font-size: 30px;
+      }
+      .contracts {
+        font-size: 20px;
+      }
+      .glitches {
+        font-size: 40px;
+      }
+      .collection {
+        font-size: 60px;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .title-intro {
+        font-size: 10px;
+        top: 20%;
+      }
+      .contracts {
+        font-size: 10px;
+      }
+      .glitches {
+        font-size: 20px;
+      }
+      .collection {
+        font-size: 30px;
+      }
+    }
+    
+    .text-container {
+      position: absolute;
+      text-align: center;
+      top: 110%;
+      left: 35%;
+      width: 30%;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      font-size: 25px;
+      opacity: 0; 
+      transition: opacity 0.5s ease-in-out;
+      margin: 0 auto;
+    }
+    
+    .text-container p {
+      margin: 0;
+      padding: 5px 5px;
+    }
+    
+    .text-large {
+      font-size: 30px;
+    }
+    .text-medium {
+      font-size: 15px;
+    }
+    .text-small {
+      font-size: 13px;
+  line-height: 1.5;
+    }
+    
+
+    
+    .svgItemBody {
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+      cursor: pointer;
+
+       margin: 0 auto;
+
+      height: 500px;
+      width: 500px;
+    }
+    
+    
+    @media (max-width: 800px) {
+      .text-container {
+        font-size: 20px;
+      }
+      .text-large {
+        font-size: 25px;
+      }.text-medium {
+        font-size: 10px;
+      }.text-small {
+        font-size: 9px;
+      }
+    }
+    
+    @media (max-width: 820px) {
+      .text-container {
+        left: 0%;
+        text-align: center;
+        width: 100%;
+      }
+      .svgItemBody {
+         height: 250px;
+          width: 250px;
+      }
+    }
+    
+    .svgObjectBody {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    
+    
+    .scrollbox {
+      overflow: auto;
+      width: 300px;
+      max-height: 130px;
+      margin: 0 auto;
+      top: 50%; 
+
+      --g: radial-gradient(55% 20px, #0009, #0000);  
+      background: 
+
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent);
+        var(--g) top / 100% 200%,    
+        var(--g) bottom / 100% 200%;
+      padding: 10px;
+      font-size: 20px;
+    }
+    
+    @media (max-width: 500px) {
+      .scrollbox {
+        width: 200px;
+      }
+    }
+    
+    .scrollbox::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .scrollbox::-webkit-scrollbar-thumb {
+      background-color: silver;
+      border-radius: 4px;
+    }
+    
+    .scrollbox::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    
+    .scrollbox p.last-visible-line {
+      opacity: 0.1;
+    }
+    
+    .button-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 100%;
+      overflow: hidden;
+    }
+
+    .button {
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 20px;
+      color: #ffffff;
+      background-color: #333333;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+      position: relative;
+      z-index: 2;
+      font-family: 'Alegreya Sans', sans-serif;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+      transition: color 0.4s;
+      text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+    }
+
+    .button:hover {
+      background-color: #444444;
+      transform: scale(1.05);
+      color: black;
+    }
+
+    /* Add responsive adjustments as needed */
+    @media (max-width: 768px) {
+      .button-container {
+        flex-direction: column;
+      }
+
+      .button {
+        margin-top: 10px;
+        font-size: 10px;
+      }
+    }
+
+    
+    
+    
+    .marquee-container {
+      width: 300px;
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0 auto;
+    }
+
+    .marquee-images {
+      display: inline-block;
+      animation: marqueeScroll 2s linear infinite;
+    }
+
+    @keyframes marqueeScroll {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    
+    marquee {
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+      width: 50%;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none; 
+    }
+    
+    
+    
+    
+  </style>
+</head>
+<body class="intro intro-background">
+  <div id="loadedContent"></div>
+    <div id="svgTitle" class="title-intro">
+      <span class="contracts">4 contracts</span> 
+      <br>
+      <span class="glitches">∞ glitches</span> 
+      <br>
+      <span class="collection">1 OnChainCollection</span>
+    </div>
+  
+   <script>
+    $(function() {
+      $("#loadedContent").load("body.html", function() {
+        $.getScript("scripts.js");
+      });
+    });
+  </script>
+  <div id="svgContainer">
+    <div class="svgItem">
+      <object class="svgObject" data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/site5.svg?v=1692144981242" type="image/svg+xml"></object>
+    </div>
+    <div class="svgItem">
+      <object class="svgObject" data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/site3.svg?v=1692144974876" type="image/svg+xml"></object>
+    </div>
+    <div class="svgItem">
+      <object class="svgObject" data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/site6.svg?v=1692144991917" type="image/svg+xml"></object>
+    </div>
+    <div class="svgItem">
+      <object class="svgObject" data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/site4.svg?v=1692144987950" type="image/svg+xml"></object>
+    </div>
+    <div class="svgItem">
+      <object class="svgObject" data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/REdflames.svg?v=1692148918194" type="image/svg+xml"></object>
+    </div>
+    <div class="svgItem">
+      <object class="svgObject" data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/black.svg?v=1692148873113" type="image/svg+xml"></object>
+    </div>
+    <div class="svgItem">
+      <object class="svgObject" data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/download.svg?v=1692148875714" type="image/svg+xml"></object>
+    </div>
+    <div class="svgItem">
+      <object class="svgObject" data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/site2.svg?v=1692144969283" type="image/svg+xml"></object>
+    </div>
+    <div class="svgItem">
+      <object class="svgObject" data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/gg1.svg?v=1692148977185" type="image/svg+xml"></object>
+    </div>
+    <div class="svgItem">
+      <object class="svgObject" data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/threadopepe.svg?v=1692149177238" type="image/svg+xml"></object>
+    </div>
+    <div class="svgItem">
+      <object class="svgObject" data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/ggg8.svg?v=1692149911574" type="image/svg+xml"></object>
+    </div>
+  </div>
+  
+    <div class="text-container" id="oneone">
+      <p class="">Aesthetically Glitched. </p>
+      <br>
+      <p class="text-large">100% onChain art and traits. </p>      
+      <br>
+      <p class="text-medium">Controlled Environment. </p>
+      <br>
+      <p class="text-small">Infinite Possibilities. </p>
+      <br>
+      <p class="text-small">Finite Collection. </p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      <p class="text-large">Generated using 4 contracts.</p>
+      <br>
+      <p class="text-medium" style="text-align: center;"> 1 to set the colors. <a class="text-medium" href="https://etherscan.io/address/your-contract-address" target="_blank">[colorGenerator.sol]</a> </p>
+      <br>      
+      <p class="text-medium" style="text-align: center;"> 1 to set the glitches and filters. <a class="text-medium" href="https://etherscan.io/address/your-contract-address" target="_blank">[Fillers.sol]</a> </p>
+      <br>      
+      <p class="text-medium" style="text-align: center;"> 1 to generate the art and metadata. <a class="text-medium" href="https://etherscan.io/address/your-contract-address" target="_blank">[Libee.sol]</a> </p>
+      <br>      
+      <p class="text-medium" style="text-align: center;"> 1 to generate the random variables and mint. <a class="text-medium" href="https://etherscan.io/address/your-contract-address" target="_blank">[Ocopepen.sol]</a> </p>
+      <br>
+      <br>
+      <br>
+      
+          <div class="scrollbox">
+          <p class="text-medium"> Uniqueness and Rarity: </p>
+          <br>
+          <p class="text-small"> Each piece of OcOpepen art are one-of-a-kind generated onChain. The combination of Solids, Statics, Patterns, Glitches, Grains, Gradients, Noises, Splashes etc./ ensures that no two OcOpepens are exactly alike, creating a sense of rarity and uniqueness that collectors often seek, but are not offered in an onChain collection, over multiple layers, with metadata. </p>
+            <p class="text-small"> This is made possible through linking multiple contracts and one base contract for mint. The gas for mint is a standard cost (optimised as always), let the blockchain do the onChain art creation and display, calling any number of sub contracts (libraries). Randomness is handled and solved internally through variables created at mint and stored in the main contract and does not change after the first creation/ </p>
+          </div>
+       
+      <br>
+      <br>
+      <br>
+      <p class="text-large">Why Opepens? </p>
+      <br>
+      <p class="text-small"> Because, it is, not a pfp project. </p>
+      <p class="text-small"> Because it is not a pfp project [sic]. </p>
+      <p class="text-small"> Because there are not many "heavy" Opepens. </p>
+      <p class="text-small"> Not certainly onChain. </p>
+      <p class="text-small"> Because 1.618. [how-to-v-v] /</p>
+      <br>
+      <br>
+      <br>
+      
+      <p class="text-large">How OnChain? </p>
+      <br>
+      <p class="text-small"> The art is generated on the fly after a token is minted. </p>
+      <p class="text-small"> Contacts' logic randomises layers for each token minted. </p>
+      <p class="text-small"> Controlled through random variables created when each token is minted. </p>
+      <p class="text-small"> Separate minting contract, Separate color picker, art, metadata generation contracts.</p>
+      <p class="text-small"> Minimal functionalities in optimised minting contract[ERC721A]</p>
+      <p class="text-small"> Facilitates very minimal minting gas cost for mintoors</p>
+      <p class="text-small"> tokenURI calls generates art onChain via interfaces.</p>
+      <p class="text-small"> tokenURI for each tokenId remains unchanged.</p>
+      <p class="text-small"> Marketplaces display of the onChain art remains unchanged too.</p>
+      <br>
+      <br>
+      <br>
+      
+          <div class="scrollbox">
+          <p class="text-medium"> Evolution and Reusability: </p>
+          <br>
+          <p class="text-small"> The generative nature of these contracts ensures that the art continues to evolve and upgrade over time. Not necessarily the firsts' collection but the nature of the contract allows for it to evolve by adding/connecting more code. This dynamic quality adds an element of surprise and excitement for collectors, as they can witness their artworks transform and adapt, creating an ongoing connection to the art. Openen is here to stay, in form of both art and culture. OcOpepen will evolve onchain.</p>
+          </div>
+          <br>
+          <br>
+          <br>
+      
+          <div class="scrollbox">
+          <p class="text-medium"> Blockchain Authenticity: </p>
+          <br>
+          <p class="text-small"> Each artwork is securely generated and stored on the blockchain, providing provenance, authenticity, and traceability. This transparency ensures that the ownership and history of the art are immutable and easily verifiable.</p>
+          </div>
+          
+  <br>
+  <br>
+  <br>
+      <div class="svgItemBody">
+      <object class="svgObjectBody" id ="imageoneone" data="https://cdn.glitch.global/cc2fc5a3-66a9-4ac5-9105-978ee9681d88/download%20(2).svg?v=1692222136245" type="image/svg+xml"></object>
+    </div>
+  <br>
+  <br>
+  <br>
+
+    <div class="scrollbox">
+    <p class="text-medium"> Artistic Collaboration: </p>
+    <br>
+    <p class="text-small"> Artists, developers, and creators from different disciplines can collaborate to develop and refine the algorithms and parameters used in the generative process. This collaborative effort can lead to the creation of innovative and boundary-pushing artworks with the help of multi algorithms forming together unseen shapes, patterns and effects.</p>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="scrollbox">
+    <p class="text-medium"> Aesthetic Enjoyment: </p>
+    <br>
+    <p class="text-small"> Ultimately, the goal of creating such a collection is to offer a visually appealing, light or heavy, solids or gradients, grainy or glitchy, and engaging experience, onChain. The common love for Opepen parameters and standards, the intricate patterns, vibrant colors, and dynamic glitches come together to create onChain artworks that are not only aesthetically pleasing but also emotionally resonant to the shapes we admire.</p>
+    </div>
+      
+  <br>
+  <br>
+  <br>
+      <p class="text-medium">Playground offers the chance to generate and test possibilities.</p> 
+      <p class="text-medium">Calling the 4 contracts. Without the need of any wallet connection. </p>
+  <br>
+  <br>
+  <br>      
+  <p class="text-medium"> Playground widget has been customised to </p>
+  
+  <p class="text-medium"> to Capture as gif [1000x1000] </p>
+  <p class="text-medium"> to Repost on X as gif [500x500] </p>
+  <p class="text-medium"> to Capture a Single image [1000x1000]</p>
+  <p class="text-medium"> to Capture multiple frames [1000x1000]</p>
+  <br>
+  <br>     
+  <br>     
+  <p class="text-medium">Mint will start the countdown soon.</p>
+  <br>
+  <br>     
+  <br>
+  <p class="text-medium">Holders area offers the ability to view the OcOpepens you own. More functionality including glitch your own opepens and create your own onChain collection will be added soon. </p>
+  <br>
+  <br>     
+  <br>
+  <p class="text-medium"> All built from scratch. </p>         
+  <br>
+  <br>
+  <br>
+
+      <div class="button-container">
+  <a href="generate.html" class="button">Go to Playground</a>
+  <a href="mint.html" class="button">Go to Mint</a>
+</div>
+  
+  <br>
+  <br>
+  <br>
+  <br>
+      
+     <div class="scrollbox">
+      <p class="text-medium"> Possibilities: </p>
+      <br>
+      <p class="text-small"> This could have been an OcOpepen Open Edition. Could have been the first 10000 onChain Opepen collection. Could have been the first 10000 glitched Opepen collection, oncChain. </p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      <p class="text-small"> Can. </p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <p class="text-small">More contracts, more glitches, more... sets? </p>
+     </div>
+  <br>
+  <br>
+  <br>
+  <br>
+      
+      
+
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const svgItems = document.querySelectorAll('.svgItem');
+    const numVisible = 1;
+
+    function updateVisibility() {
+      svgItems.forEach((item, index) => {
+        item.style.opacity = Math.abs(index - currentIndex) <= numVisible / 2 ? 2 : 0.3;
+      });
+    }
+
+
+    function autoAnimate() {
+      currentIndex = (currentIndex + 1) % svgItems.length;
+      updateVisibility();
+      setTimeout(autoAnimate, 1000); 
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateVisibility();
+      autoAnimate();
+    });
+    
+    document.addEventListener('scroll', () => {
+      const textContainer = document.querySelector('.text-container');
+      const windowHeight = window.innerHeight;
+      const textContainerTop = textContainer.getBoundingClientRect().top;
+
+        const opacity = Math.min(Math.max((windowHeight - textContainerTop) / windowHeight, 0), 1);
+        textContainer.style.opacity = opacity;
+
+    });
+    
+    const scrollboxes = document.querySelectorAll('.scrollbox');
+    const windowHeight = window.innerHeight;
+
+    function updateScrollboxVisibility() {
+      scrollboxes.forEach((scrollbox) => {
+        const rect = scrollbox.getBoundingClientRect();
+        const top = rect.top;
+        const opacity = Math.min(Math.max((windowHeight - top) / windowHeight, 0), 1);
+
+        const textSmallElements = scrollbox.querySelectorAll('.text-small');
+        const lastTextSmall = textSmallElements[textSmallElements.length - 1];
+
+        scrollbox.style.opacity = opacity;
+        lastTextSmall.style.color = 'silver';
+      });
+    }
+
+    document.addEventListener('scroll', updateScrollboxVisibility);
+    window.addEventListener('load', updateScrollboxVisibility);
+    
+
+
+
+  </script>
+</body>
+</html>

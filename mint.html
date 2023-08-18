@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OcOpepen</title>
+  
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+
+    body {
+      position: fixed;
+    }
+
+    .navigation-container {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 999; 
+    }
+
+#mint-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  background-color: silver;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+    
+@media (max-width: 500px) {
+  #mint-section {
+    width: 250px;
+    height: auto;
+    min-height: 250px;
+  }
+}
+    
+#innerMint {
+  display: none; 
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  }
+
+button {
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #333333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+  font-family: 'Alegreya Sans';
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+  margin-top: 20px;
+  
+}
+  
+
+button:hover {
+  background-color: #444444;
+  transform: scale(1.05);
+  color: black;
+}
+
+
+#counter {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.light-effect {
+  position: relative;
+}
+
+.light-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+
+.filter-effect {
+  filter: grayscale(80%) brightness(120%);
+}
+    
+.text-mint {
+  color: #333333;
+  font-size: 15px;
+  transition: color 0.4s;
+  font-family: 'Alegreya Sans';
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  
+}
+@media (max-width: 1200px) {
+  .text-mint {
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .text-mint {
+    font-size: 10px;
+  }
+}
+    
+#mintBt {
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#mintBt:hover {
+  background-color: #444444;
+  transform: scale(1.05);
+  color: black;
+}
+    
+
+  </style>
+</head>
+  
+  
+  <body class="mint">
+    <div id="loadedContent"></div>
+    <div id="mint-section" class="light-effect filter-effect">
+      <button id="mintBt">Connect MetaMask</button>
+      <div id="innerMint">
+        <div id="address" class="text-mint"></div>
+        <br>
+        <div id="freeMints" class="text-mint"></div>
+        <br>
+        <div id="supply" class="text-mint"></div>
+        <br>
+        <div id="sale-active" class="text-mint"></div>
+        <br>
+        <div class="counter-container">
+          <p><span id="counter" class="text-mint">0</span></p>
+          <button onclick="decrement()">-</button>
+          <button onclick="increment()">+</button>
+          <br>
+        </div>
+        <button id="mint-button" class="buttonConnect">Mint OcOpepens</button>
+      </div>
+    
+    
+      <div id="error-section">
+          <div id="errorText" class="text-mint"></div>
+      </div>
+      
+      </div>
+    
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.6.0/ethers.umd.min.js"></script>
+    <script>
+    $(function() {
+      $("#loadedContent").load("body.html", function() {
+
+        $.getScript("scripts.js");
+        
+        
+        
+        
+      const mintButton = document.querySelector("#mint-button");
+      const mintSection = document.querySelector("#mint-section");
+      const innerMint = document.querySelector("#innerMint");
+        
+      const errorSection = document.querySelector("#error-section");
+      const supply = document.querySelector("#supply");
+      const saleActive = document.querySelector("#sale-active");
+      const errorText = document.querySelector("#errorText");
+      const contractAddress = '0x559d3E9EAa0344CBF66cb61679535b10Be8c3AdA';
+      const contractAbi = [{"inputs":[{"internalType":"address","name":"_libee_addr","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"approved","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"operator","type":"address"},{"indexed":false,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[],"name":"MAX_TOKENS","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"approve","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getApproved","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"libee","outputs":[{"internalType":"contract Libee","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"mint","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"saleActive","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"startSale","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"index","type":"uint256"}],"name":"tokenByIndex","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"index","type":"uint256"}],"name":"tokenOfOwnerByIndex","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"tokenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"transferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"withdraw","outputs":[],"stateMutability":"payable","type":"function"}];
+      
+    
+
+      const connectMetaMask = async () => {
+        if (typeof window.ethereum !== "undefined") {
+          try {
+            await window.ethereum.request({ method: "eth_requestAccounts" });
+            console.log("MetaMask connected");
+
+            const web3 = new Web3(window.ethereum);
+            const contract = new web3.eth.Contract(contractAbi, contractAddress);
+            
+            let totalSupply = await contract.methods.totalSupply().call()                                                  
+            let maxSupply = await contract.methods.MAX_TOKENS().call()
+            
+            const publicActive = await contract.methods.saleActive().call();
+            
+            const mintNFT = async (amount, payableAmount) => {
+            try {
+          
+              const transaction = await contract.methods.mint(amount).send({
+                from: account,
+                value: web3.utils.toWei(payableAmount.toString(), "ether"),
+              });
+              console.log("Mint transaction:", transaction);
+            } catch (error) {
+              console.error("Error minting NFT:", error);
+            }
+          };
+
+          
+            const accounts = await web3.eth.getAccounts();
+            const account = accounts[0];
+            console.log("account connected", accounts[0]);
+            const connectedAddress = accounts[0];
+          
+            connectButton.style.display = "none";
+            innerMint.style.display = "flex";
+            
+        
+            
+            address.innerHTML = `Welcome, ${connectedAddress}`;
+        
+            supply.innerHTML = `Available Supply: difference / maxSupply`;
+            saleActive.textContent = `Sale Open: ${publicActive} ` ;
+            
+            
+            let difference = maxSupply - totalSupply;
+            supply.innerHTML = `Available Supply: ${difference} / ${maxSupply}`;
+            
+            mintButton.addEventListener("click", () => {
+            const amount = document.getElementById('counter').innerText;
+            let payableAmount = 0;
+            console.log("price", amount);
+          
+            payableAmount = 0;
+          
+            mintNFT(amount, payableAmount);
+              
+            });
+          } catch (error) {
+            connectButton.style.display = "none";
+            errorSection.style.display = "block";
+          
+            errorText.innerHTML = `Mint commencing soon!`;
+            console.error("Error connecting to MetaMask:", error);
+          }
+        } else {
+          connectButton.style.display = "none";
+          errorSection.style.display = "block";
+          errorText.innerHTML = `ERROR! check if connected to ethereum wallet and no external plugins are causing issues!`;
+          console.error("MetaMask not found");
+        }
+      };
+      const connectButton = document.querySelector("#mintBt");
+      connectButton.addEventListener("click", connectMetaMask);
+      
+     
+        
+        
+      });
+    });
+      
+       // Counter variable
+      let counter = 0;
+
+      // Function to update the counter display
+      function updateCounter() {
+          document.getElementById('counter').innerText = counter;
+      }
+
+      // Function to increment the counter
+      function increment() {
+          if (counter < 10) {
+              counter++;
+              updateCounter();
+          }
+      }
+
+      // Function to decrement the counter
+      function decrement() {
+          if (counter > 0) {
+              counter--;
+              updateCounter();
+          }
+      }
+      
+  </script>
+
+
+</body>
+</html>
