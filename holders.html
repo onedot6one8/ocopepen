@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     
+    
     .title {
       margin-bottom: 60%;
     }
@@ -51,7 +52,9 @@
         font-size: 12px;
       }
     }
-
+    
+    
+    
     .image-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -61,11 +64,18 @@
     
 
     .image-grid img {
-      width: 100px;
-      height: 100px;
+      width: 200px;
+      height: 200px;
       display: block;
       margin: auto auto;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+      box-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+      transform: rotateY(0deg);
+      transform-style: preserve-3d;
+      animation: rotate 20s linear infinite;
+      animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+      border-radius: 15px;
+      transition: transform 0.5s ease;
+      background-color: #181818;
     }
     
     
@@ -80,10 +90,6 @@
     }
     
     .nft-card {
-      padding: 10px;
-      background-color: silver;
-      border-radius: 8px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
       transition: transform 0.2s ease-in-out;
       cursor: pointer;
     }
@@ -98,13 +104,46 @@
       font-size: 20px;
       font-weight: bold;
       margin-bottom: 20px;
+      color: white;
+      text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
     }
 
     .nft-card-image {   
       display: block;
       margin: 0 auto;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 1);
+      
     }
+    
+     @keyframes rotate {
+      0%, 100% {
+        transform: rotateY(0deg);
+      }
+      12.5% {
+        transform: rotateY(30deg);
+      }
+      25% {
+        transform: rotateY(45deg);
+      }
+      37.5% {
+        transform: rotateY(-30deg);
+      }
+      50% {
+        transform: rotateY(-45deg);
+      }
+      62.5% {
+        transform: rotateY(-30deg);
+      }
+      75% {
+        transform: rotateY(-45deg);
+      }
+      87.5% {
+        transform: rotateY(-30deg);
+      }
+    }
+    
+    
+    
+    
     
     .connect-button,
     .disconnect-button {
