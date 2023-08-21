@@ -292,6 +292,12 @@
 
                   ownedNFTsElement.appendChild(nftElement);
 
+                  const linkElement = document.createElement('a');
+                  linkElement.href = `https://opensea.io/assets/ethereum/0x3480f26941688337f62c56895f7941508862c287/${tokenId}`;
+                  linkElement.target = "_blank"; 
+                  linkElement.appendChild(svgImage);
+                  nftElement.appendChild(linkElement);
+
                   const captureButton = document.createElement("button");
                   captureButton.textContent = "Capture Image";
                   captureButton.id = `captureButton_${tokenId}`;
