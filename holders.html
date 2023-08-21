@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Holders</title>
-  <link rel="icon" href="https://ipfs.io/ipfs/bafybeibxdkgk2skfquxdegafxugnqd64wwkqzvmroh3ptofff2mmhawxwe/Tlogo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    
-    
-    .title {
-      margin-bottom: 60%;
-    }
-  
-    
-   
-    .container11 {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Holders</title>
+    <link
+      rel="icon"
+      href="https://ipfs.io/ipfs/bafybeibxdkgk2skfquxdegafxugnqd64wwkqzvmroh3ptofff2mmhawxwe/Tlogo.svg"
+      type="image/svg+xml"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .title {
+        margin-bottom: 60%;
+      }
+
+      .container11 {
         text-align: center;
         position: absolute;
         top: 60vh;
@@ -23,340 +23,569 @@
         width: 50%;
         padding: 20px;
         box-sizing: border-box;
-        z-index: 0; 
-    }
-    
-    @media (max-width: 900px) {
-      .title{
-        margin-top: 50%;
-
+        z-index: 0;
       }
-      .container11 {
-        left: 0%;
-        width: 100%;
-        top: 70vh;
-      }
-    }
-    
-    
 
-    .connected-address {
-      margin-top: 20px;
-      font-size: 24px;
-      font-weight: bold;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-    }
-    
-    @media (max-width: 840px) {
+      @media (max-width: 900px) {
+        .title {
+          margin-top: 50%;
+        }
+        .container11 {
+          left: 0%;
+          width: 100%;
+          top: 70vh;
+        }
+      }
+
       .connected-address {
-        font-size: 12px;
+        margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
       }
-    }
-    
-    
-    
-    .image-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-top: 20px;
-    }
-    
 
-    .image-grid img {
-      width: 200px;
-      height: 200px;
-      display: block;
-      margin: auto auto;
-      box-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
-      transform: rotateY(0deg);
-      transform-style: preserve-3d;
-      animation: rotate 20s linear infinite;
-      animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-      border-radius: 15px;
-      transition: transform 0.5s ease;
-      background-color: #181818;
-    }
-    
-    
-    @media (max-width: 480px) {
-      .image-grid  {
-        grid-template-columns: repeat(2, 1fr);
+      @media (max-width: 840px) {
+        .connected-address {
+          font-size: 12px;
+        }
       }
+
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+      }
+
       .image-grid img {
-        width: 75px;
-        height: 75px;
-      }
-    }
-    
-    .nft-card {
-      transition: transform 0.2s ease-in-out;
-      cursor: pointer;
-    }
-
-    .nft-card:hover {
-      transform: scale(3);
-      z-index: 1;
-    }
-
-    
-    .nft-card-text {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: white;
-      text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
-    }
-
-    .nft-card-image {   
-      display: block;
-      margin: 0 auto;
-      
-    }
-    
-     @keyframes rotate {
-      0%, 100% {
+        width: 200px;
+        height: 200px;
+        display: block;
+        margin: auto auto;
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
         transform: rotateY(0deg);
+        transform-style: preserve-3d;
+        animation: rotate 20s linear infinite;
+        animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+        border-radius: 15px;
+        transition: transform 0.5s ease;
+        background-color: #181818;
       }
-      12.5% {
-        transform: rotateY(30deg);
+
+      @media (max-width: 480px) {
+        .image-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .image-grid img {
+          width: 75px;
+          height: 75px;
+        }
       }
-      25% {
-        transform: rotateY(45deg);
+
+      .nft-card {
+        transition: transform 0.2s ease-in-out;
+        cursor: pointer;
       }
-      37.5% {
-        transform: rotateY(-30deg);
+
+      .nft-card-text {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: white;
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
       }
-      50% {
-        transform: rotateY(-45deg);
+
+      .nft-card-image {
+        display: block;
+        margin: 0 auto;
       }
-      62.5% {
-        transform: rotateY(-30deg);
+
+      @keyframes rotate {
+        0%,
+        100% {
+          transform: rotateY(0deg);
+        }
+        12.5% {
+          transform: rotateY(30deg);
+        }
+        25% {
+          transform: rotateY(45deg);
+        }
+        37.5% {
+          transform: rotateY(-30deg);
+        }
+        50% {
+          transform: rotateY(-45deg);
+        }
+        62.5% {
+          transform: rotateY(-30deg);
+        }
+        75% {
+          transform: rotateY(-45deg);
+        }
+        87.5% {
+          transform: rotateY(-30deg);
+        }
       }
-      75% {
-        transform: rotateY(-45deg);
+
+      .connect-button,
+      .disconnect-button {
+        text-decoration: none;
+        padding: 10px 20px;
+        font-size: 20px;
+        color: #ffffff;
+        background-color: #333333;
+
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        position: relative;
+        z-index: 1;
+        font-family: "Alegreya Sans";
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
       }
-      87.5% {
-        transform: rotateY(-30deg);
+
+      .connect-button:hover,
+      .disconnect-button:hover {
+        background-color: #444444;
+        transform: scale(1.05);
+        color: black;
       }
-    }
-    
-    
-    
-    
-    
-    .connect-button,
-    .disconnect-button {
-      text-decoration: none;
-      padding: 10px 20px;
-      font-size: 20px;
-      color: #ffffff;
-      background-color: #333333;
-      
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.3s;
-      position: relative;
-      z-index: 1;
-      font-family: 'Alegreya Sans';
-      text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
-    }
 
-    .connect-button:hover,
-    .disconnect-button:hover {
-      background-color: #444444;
-      transform: scale(1.05);
-      color: black;
-    }
-    
-    .texts {
-      font-weight: bold;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-    }
-  </style>
-</head>
-<body class="holders">
-  <div id="loadedContent"></div>
-  <div class="container11">
-    <h1 class="connected-address"><span id="connectedAddress">Welcome..</span></h1>
-    <button class="connect-button" id="connectButton">Connect</button>
-    <button class="disconnect-button" id="disconnectButton" style="display: none;">Disconnect</button>
-    <h2 class="texts" id="ownedLabel" style="display: none;">You, Own:</h2>
-    <div class="texts" id="messageLabel">Click to connect</div>
-    <div class="image-grid" id="ownedNFTs" style="display: none;"></div>
-  </div>
-  
-  
-  
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.6.0/ethers.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.3.2/dist/html2canvas.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jsgif@1.0.2/libgif.min.js"></script>
+      .texts {
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+      }
 
+      .capture-button,
+      .capture-frames-button,
+      .gif-button,
+      .xgif-button {
+        text-decoration: none;
+        padding: 10px 20px;
+        font-size: 10px;
+        color: #ffffff;
+        background-color: #333333;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+        position: relative;
+        z-index: 1;
+        font-family: "Alegreya Sans";
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+        margin-top: 10px; /* Add spacing between buttons */
+      }
+    </style>
+  </head>
+  <body class="holders">
+    <div id="loadedContent"></div>
+    <div class="container11">
+      <h1 class="connected-address">
+        <span id="connectedAddress">Welcome..</span>
+      </h1>
+      <button class="connect-button" id="connectButton">Connect</button>
+      <button
+        class="disconnect-button"
+        id="disconnectButton"
+        style="display: none"
+      >
+        Disconnect
+      </button>
+      <h2 class="texts" id="ownedLabel" style="display: none">You, Own:</h2>
+      <div class="texts" id="messageLabel">Click to connect</div>
+      <div class="image-grid" id="ownedNFTs" style="display: none"></div>
+    </div>
 
-<script>
-    $(function () {
-      $("#loadedContent").load("body.html", async function () {
-        $.getScript("scripts.js");
- 
-        const web3 = new Web3(window.ethereum);
-        
-      
-        
-        const connectButton = document.getElementById('connectButton');
-        const disconnectButton = document.getElementById('disconnectButton');
-        const connectedAddressElement = document.getElementById('connectedAddress');
-        const ownedNFTsElement = document.getElementById('ownedNFTs');
-        const ownedLabel = document.getElementById('ownedLabel');
-        const messageLabel = document.getElementById('messageLabel');
-        const title = document.getElementById('title');
-        
-        connectButton.addEventListener('click', async () => {
-        
-         try {
-            const networkId = await web3.eth.net.getId();
-            const accounts = await web3.eth.requestAccounts();
-            const connectedAddress = accounts[0];
-            connectedAddressElement.textContent = `Hello, ${connectedAddress}`;
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.6.0/ethers.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.3.2/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsgif@1.0.2/libgif.min.js"></script>
 
-           
-            //degents mainnet test
-            // const contractAddress = '0x0F6979e74E4aF9aBeD72298D818A2434fE0b95B6';
-            // const contractAbi = [{"inputs":[{"internalType":"address","name":"_blocklistContractAddress","type":"address"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"ApprovalCallerNotOwnerNorApproved","type":"error"},{"inputs":[],"name":"ApprovalQueryForNonexistentToken","type":"error"},{"inputs":[],"name":"BalanceQueryForZeroAddress","type":"error"},{"inputs":[],"name":"InvalidQueryRange","type":"error"},{"inputs":[],"name":"MintERC2309QuantityExceedsLimit","type":"error"},{"inputs":[],"name":"MintToZeroAddress","type":"error"},{"inputs":[],"name":"MintZeroQuantity","type":"error"},{"inputs":[],"name":"OwnerQueryForNonexistentToken","type":"error"},{"inputs":[],"name":"OwnershipNotInitializedForExtraData","type":"error"},{"inputs":[],"name":"SetUserCallerNotOwnerNorApproved","type":"error"},{"inputs":[],"name":"TransferCallerNotOwnerNorApproved","type":"error"},{"inputs":[],"name":"TransferFromIncorrectOwner","type":"error"},{"inputs":[],"name":"TransferToNonERC721ReceiverImplementer","type":"error"},{"inputs":[],"name":"TransferToZeroAddress","type":"error"},{"inputs":[],"name":"URIQueryForNonexistentToken","type":"error"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"approved","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"operator","type":"address"},{"indexed":false,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"fromTokenId","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"toTokenId","type":"uint256"},{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"}],"name":"ConsecutiveTransfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"account","type":"address"}],"name":"Paused","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"account","type":"address"}],"name":"Unpaused","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"},{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":false,"internalType":"uint64","name":"expires","type":"uint64"}],"name":"UpdateUser","type":"event"},{"inputs":[],"name":"MAX_SUPPLY","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"PUBLIC_COUNTER","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"PUBLIC_CURRENT_SUPPLY","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"approve","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"baseTokenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"blocklistContractAddress","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"blocklistPermanentlyDisabled","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burn0glory","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burn0golden","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burn0gr3y","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnAbundance","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnActive","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"burnClaimActive","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnImpatient","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"burnToMintContractAddress","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"burnToMintvibeContractAddress","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnTranquil","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnWealth","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnhUeye","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmr0ccult","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmr0g","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmrBelievoor","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmrBleedoor","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmrCheckoormorerare","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmrCollectoor","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmrEarly","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmrHue","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmrKek","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmrMintoor","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmrSingleCheckoor","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmrSpectaculoor","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmrchargeoor","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmrcheckoor","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmrkekelessrare","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmrtroublemakoor","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnmrviboor","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"burnupdatednewBurnXX","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_newPublicSupply","type":"uint256"}],"name":"changePublicSupply","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"explicitOwnershipOf","outputs":[{"components":[{"internalType":"address","name":"addr","type":"address"},{"internalType":"uint64","name":"startTimestamp","type":"uint64"},{"internalType":"bool","name":"burned","type":"bool"},{"internalType":"uint24","name":"extraData","type":"uint24"}],"internalType":"struct IERC721A.TokenOwnership","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"tokenIds","type":"uint256[]"}],"name":"explicitOwnershipsOf","outputs":[{"components":[{"internalType":"address","name":"addr","type":"address"},{"internalType":"uint64","name":"startTimestamp","type":"uint64"},{"internalType":"bool","name":"burned","type":"bool"},{"internalType":"uint24","name":"extraData","type":"uint24"}],"internalType":"struct IERC721A.TokenOwnership[]","name":"","type":"tuple[]"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"freezeMetadata","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"freezePayoutAddresses","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getApproved","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address[]","name":"receivers","type":"address[]"},{"internalType":"uint256[]","name":"mintNumber","type":"uint256[]"}],"name":"gift","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"isExchangeBlocklisted","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"isPublicSaleActive","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"metadataFrozen","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"numTokens","type":"uint256"}],"name":"mint","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"mintsPerBurn","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"newBurnID","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"numberMinted","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"pause","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"paused","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"payoutAddresses","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"payoutAddressesFrozen","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"payoutBasisPoints","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"permanentlyDisableBlocklist","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"publicCounter","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"publicMintsAllowedPerTransaction","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"publicPrice","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_newMaxSupply","type":"uint256"}],"name":"reduceMaxSupply","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"royaltyAddress","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"royaltyFee","outputs":[{"internalType":"uint96","name":"","type":"uint96"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_tokenId","type":"uint256"},{"internalType":"uint256","name":"_salePrice","type":"uint256"}],"name":"royaltyInfo","outputs":[{"internalType":"address","name":"","type":"address"},{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string","name":"_newBaseURI","type":"string"}],"name":"setBaseURI","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bool","name":"_burnClaimActive","type":"bool"}],"name":"setBurnClaimState","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_mintsAllowed","type":"uint256"}],"name":"setPublicMintsAllowedPerTransaction","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_publicPrice","type":"uint256"}],"name":"setPublicPrice","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bool","name":"_saleActiveState","type":"bool"}],"name":"setPublicSaleState","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_royaltyAddress","type":"address"}],"name":"setRoyaltyAddress","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint96","name":"_feeNumerator","type":"uint96"}],"name":"setRoyaltyFee","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"address","name":"user","type":"address"},{"internalType":"uint64","name":"expires","type":"uint64"}],"name":"setUser","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"tokenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"tokensOfOwner","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"start","type":"uint256"},{"internalType":"uint256","name":"stop","type":"uint256"}],"name":"tokensOfOwnerIn","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"transferFrom","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"unpause","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_blocklistContractAddress","type":"address"}],"name":"updateBlocklistContractAddress","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"exchanges","type":"uint256[]"},{"internalType":"bool[]","name":"blocklisted","type":"bool[]"}],"name":"updateBlocklistedExchanges","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_mintsPerBurn","type":"uint256"}],"name":"updateMintsPerBurn","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address[]","name":"_payoutAddresses","type":"address[]"},{"internalType":"uint256[]","name":"_payoutBasisPoints","type":"uint256[]"}],"name":"updatePayoutAddressesAndBasisPoints","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_newBurnID","type":"uint256"}],"name":"updatenewBurnID","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"userExpires","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"userOf","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"}];
+    <script>
+      $(function () {
+        $("#loadedContent").load("body.html", async function () {
+          $.getScript("scripts.js");
 
-           // ocopepen testnet test
-             const contractAddress = '0x3480f26941688337f62C56895f7941508862c287';
-             const contractAbi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"ApprovalCallerNotOwnerNorApproved","type":"error"},{"inputs":[],"name":"ApprovalQueryForNonexistentToken","type":"error"},{"inputs":[],"name":"BalanceQueryForZeroAddress","type":"error"},{"inputs":[],"name":"InvalidQueryRange","type":"error"},{"inputs":[],"name":"MintERC2309QuantityExceedsLimit","type":"error"},{"inputs":[],"name":"MintToZeroAddress","type":"error"},{"inputs":[],"name":"MintZeroQuantity","type":"error"},{"inputs":[],"name":"OwnerQueryForNonexistentToken","type":"error"},{"inputs":[],"name":"OwnershipNotInitializedForExtraData","type":"error"},{"inputs":[],"name":"TransferCallerNotOwnerNorApproved","type":"error"},{"inputs":[],"name":"TransferFromIncorrectOwner","type":"error"},{"inputs":[],"name":"TransferToNonERC721ReceiverImplementer","type":"error"},{"inputs":[],"name":"TransferToZeroAddress","type":"error"},{"inputs":[],"name":"URIQueryForNonexistentToken","type":"error"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"approved","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"operator","type":"address"},{"indexed":false,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"fromTokenId","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"toTokenId","type":"uint256"},{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"}],"name":"ConsecutiveTransfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"_getNum","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_libee_addr","type":"address"}],"name":"_setAddr","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"uint256","name":"_newRandomNumber","type":"uint256"}],"name":"_setNum","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address[]","name":"recipients","type":"address[]"},{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"name":"airdropTokens","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"approve","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"devMint","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"explicitOwnershipOf","outputs":[{"components":[{"internalType":"address","name":"addr","type":"address"},{"internalType":"uint64","name":"startTimestamp","type":"uint64"},{"internalType":"bool","name":"burned","type":"bool"},{"internalType":"uint24","name":"extraData","type":"uint24"}],"internalType":"struct IERC721A.TokenOwnership","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"tokenIds","type":"uint256[]"}],"name":"explicitOwnershipsOf","outputs":[{"components":[{"internalType":"address","name":"addr","type":"address"},{"internalType":"uint64","name":"startTimestamp","type":"uint64"},{"internalType":"bool","name":"burned","type":"bool"},{"internalType":"uint24","name":"extraData","type":"uint24"}],"internalType":"struct IERC721A.TokenOwnership[]","name":"","type":"tuple[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"freezeMetadata","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"tokenIds","type":"uint256[]"}],"name":"freezeMetadataMultiple","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getApproved","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"isMetadataFrozen","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxPerTransaction","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxPerWallet","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"mint","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"numberMinted","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"price","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"saleActive","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"newPrice","type":"uint256"}],"name":"setPrice","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_maxPerTransaction","type":"uint256"}],"name":"setmaxPerTransaction","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_maxPerWallet","type":"uint256"}],"name":"setmaxPerWallet","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_maxSupply","type":"uint256"}],"name":"setmaxSupply","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"startSale","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"stopSale","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"tokenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"tokensOfOwner","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"start","type":"uint256"},{"internalType":"uint256","name":"stop","type":"uint256"}],"name":"tokensOfOwnerIn","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"transferFrom","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"treasuryMint","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"}];
-           
+          const web3 = new Web3(window.ethereum);
 
-             
-            const contractInstance = new web3.eth.Contract(contractAbi, contractAddress);
-            
-           
-           
-            const ownerNFTs = await contractInstance.methods.tokensOfOwner(connectedAddress).call();
-           
-           if (ownerNFTs.length === 0) {
-              messageLabel.textContent = 'You, do not own any';
-              messageLabel.style.color = 'white';
-              messageLabel.style.display = 'block';
-              ownedNFTsElement.style.display = 'none';
-            } else {
-            
-           
-           ownedNFTsElement.style.display = 'grid';
-           disconnectButton.style.display = 'initial';
-           ownedLabel.style.display = 'block';
-           title.style.display = 'block';
-           connectButton.style.display = 'none';
-           messageLabel.style.display = 'none';
-           
-           document.getElementById('title').style.marginBottom = '1000px';
-           
-          
-           ownedNFTsElement.innerHTML = '';
-           
-            
-            for (const tokenId of ownerNFTs) {
-    
-                const nftElement = document.createElement('div');
-                nftElement.classList.add('nft-card'); 
+          const connectButton = document.getElementById("connectButton");
+          const disconnectButton = document.getElementById("disconnectButton");
+          const connectedAddressElement =
+            document.getElementById("connectedAddress");
+          const ownedNFTsElement = document.getElementById("ownedNFTs");
+          const ownedLabel = document.getElementById("ownedLabel");
+          const messageLabel = document.getElementById("messageLabel");
+          const title = document.getElementById("title");
 
-                
-                const textElement = document.createElement('p');
-                textElement.classList.add('nft-card-text'); 
-              
-              
-              
-                
+          connectButton.addEventListener("click", async () => {
+            try {
+              const networkId = await web3.eth.net.getId();
+              const accounts = await web3.eth.requestAccounts();
+              const connectedAddress = accounts[0];
+              connectedAddressElement.textContent = `Hello, ${connectedAddress}`;
 
+              const contractAddress =
+                "0x3480f26941688337f62C56895f7941508862c287";
+              const contractAbi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"ApprovalCallerNotOwnerNorApproved","type":"error"},{"inputs":[],"name":"ApprovalQueryForNonexistentToken","type":"error"},{"inputs":[],"name":"BalanceQueryForZeroAddress","type":"error"},{"inputs":[],"name":"InvalidQueryRange","type":"error"},{"inputs":[],"name":"MintERC2309QuantityExceedsLimit","type":"error"},{"inputs":[],"name":"MintToZeroAddress","type":"error"},{"inputs":[],"name":"MintZeroQuantity","type":"error"},{"inputs":[],"name":"OwnerQueryForNonexistentToken","type":"error"},{"inputs":[],"name":"OwnershipNotInitializedForExtraData","type":"error"},{"inputs":[],"name":"TransferCallerNotOwnerNorApproved","type":"error"},{"inputs":[],"name":"TransferFromIncorrectOwner","type":"error"},{"inputs":[],"name":"TransferToNonERC721ReceiverImplementer","type":"error"},{"inputs":[],"name":"TransferToZeroAddress","type":"error"},{"inputs":[],"name":"URIQueryForNonexistentToken","type":"error"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"approved","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"operator","type":"address"},{"indexed":false,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"fromTokenId","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"toTokenId","type":"uint256"},{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"}],"name":"ConsecutiveTransfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"_getNum","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_libee_addr","type":"address"}],"name":"_setAddr","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"uint256","name":"_newRandomNumber","type":"uint256"}],"name":"_setNum","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address[]","name":"recipients","type":"address[]"},{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"name":"airdropTokens","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"approve","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"devMint","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"explicitOwnershipOf","outputs":[{"components":[{"internalType":"address","name":"addr","type":"address"},{"internalType":"uint64","name":"startTimestamp","type":"uint64"},{"internalType":"bool","name":"burned","type":"bool"},{"internalType":"uint24","name":"extraData","type":"uint24"}],"internalType":"struct IERC721A.TokenOwnership","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"tokenIds","type":"uint256[]"}],"name":"explicitOwnershipsOf","outputs":[{"components":[{"internalType":"address","name":"addr","type":"address"},{"internalType":"uint64","name":"startTimestamp","type":"uint64"},{"internalType":"bool","name":"burned","type":"bool"},{"internalType":"uint24","name":"extraData","type":"uint24"}],"internalType":"struct IERC721A.TokenOwnership[]","name":"","type":"tuple[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"freezeMetadata","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"tokenIds","type":"uint256[]"}],"name":"freezeMetadataMultiple","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getApproved","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"isMetadataFrozen","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxPerTransaction","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxPerWallet","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"mint","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"numberMinted","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"price","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"saleActive","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"newPrice","type":"uint256"}],"name":"setPrice","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_maxPerTransaction","type":"uint256"}],"name":"setmaxPerTransaction","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_maxPerWallet","type":"uint256"}],"name":"setmaxPerWallet","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_maxSupply","type":"uint256"}],"name":"setmaxSupply","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"startSale","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"stopSale","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"tokenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"tokensOfOwner","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"start","type":"uint256"},{"internalType":"uint256","name":"stop","type":"uint256"}],"name":"tokensOfOwnerIn","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"transferFrom","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"treasuryMint","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"}];
 
-                const tokenURI = await contractInstance.methods.tokenURI(tokenId).call();
-                console.log(tokenURI);
-              
-              
-              
-              
-                const response = await fetch(tokenURI);
-                const data = await response.json();
-                console.log(data);
+              const contractInstance = new web3.eth.Contract(
+                contractAbi,
+                contractAddress
+              );
 
-                const formattedData = JSON.stringify(data, null, 2);
+              const ownerNFTs = await contractInstance.methods
+                .tokensOfOwner(connectedAddress)
+                .call();
 
-                // const imageF = data.image;
-                // name = data.name.split(",")[0];
-              
-                const imageUrl = data.image;
-                const tokenName = data.name.split(",")[0];
-              
-              
-              
-              
-//                 const tokenURI1 = "https://ipfs.io/ipfs/";
-//                 const reformattedTokenUrl = tokenURI.replace("ipfs://", tokenURI1);
-//                 console.log(reformattedTokenUrl);
+              if (ownerNFTs.length === 0) {
+                messageLabel.textContent = "You, do not own any";
+                messageLabel.style.color = "white";
+                messageLabel.style.display = "block";
+                ownedNFTsElement.style.display = "none";
+              } else {
+                ownedNFTsElement.style.display = "grid";
+                disconnectButton.style.display = "initial";
+                ownedLabel.style.display = "block";
+                title.style.display = "block";
+                connectButton.style.display = "none";
+                messageLabel.style.display = "none";
 
+                document.getElementById("title").style.marginBottom = "1000px";
 
-//                 const response = await fetch(reformattedTokenUrl);
-//                 const metadata = await response.json();
+                ownedNFTsElement.innerHTML = "";
 
-                // const imageUrl = metadata.image;
-                // const tokenName = metadata.name;
-              
-                textElement.textContent = `${tokenName}`;
-                nftElement.appendChild(textElement);
-              
-                // console.log(imageUrl);
-                // const imageUrl1 = "https://ipfs.io/ipfs/";
-                // const reformattedImageUrl = imageUrl.replace("ipfs://", imageUrl1);
-                // console.log(reformattedImageUrl);
+                for (const tokenId of ownerNFTs) {
+                  const nftElement = document.createElement("div");
+                  nftElement.classList.add("nft-card");
 
+                  const textElement = document.createElement("p");
+                  textElement.classList.add("nft-card-text");
 
-                  
-                const imgElement = document.createElement('img');
-                imgElement.classList.add('nft-card-image'); 
-                // imgElement.src = reformattedImageUrl;
-                imgElement.src = imageUrl;
+                  const tokenURI = await contractInstance.methods
+                    .tokenURI(tokenId)
+                    .call();
+                  console.log(tokenURI);
 
-                
-                nftElement.appendChild(imgElement);
+                  const response = await fetch(tokenURI);
+                  const data = await response.json();
+                  console.log(data);
 
-                
-                ownedNFTsElement.appendChild(nftElement);
+                  const formattedData = JSON.stringify(data, null, 2);
+
+                  const imageUrl = data.image;
+                  const tokenName = data.name.split(",")[0];
+
+                  textElement.textContent = `${tokenName}`;
+                  nftElement.appendChild(textElement);
+
+                  const svgImage = document.createElement("img");
+
+                  svgImage.classList.add("nft-card-image");
+
+                  svgImage.src = `${imageUrl}`;
+
+                  nftElement.appendChild(svgImage);
+
+                  ownedNFTsElement.appendChild(nftElement);
+
+                  const captureButton = document.createElement("button");
+                  captureButton.textContent = "Capture Image";
+                  captureButton.id = `captureButton_${tokenId}`;
+                  captureButton.classList.add("capture-button");
+                  captureButton.onclick = () => {
+                    captureFunction(svgImage, tokenName);
+                  };
+                  console.log(tokenName);
+                  nftElement.appendChild(captureButton);
+
+                  const captureFramesButton = document.createElement("button");
+                  captureFramesButton.textContent = "Capture Frames";
+                  captureFramesButton.id = `captureFramesButton_${tokenId}`;
+                  captureFramesButton.classList.add("capture-frames-button");
+                  captureFramesButton.onclick = () => {
+                    captureFramesFunction(svgImage, tokenName);
+                  };
+                  nftElement.appendChild(captureFramesButton);
+
+                  const gifButton = document.createElement("button");
+                  gifButton.textContent = "Create GIF";
+                  gifButton.id = `gifButton_${tokenId}`;
+                  gifButton.classList.add("gif-button");
+                  gifButton.onclick = () => {
+                    gifFunction(svgImage, tokenName);
+                  };
+                  nftElement.appendChild(gifButton);
+
+                  const xgifButton = document.createElement("button");
+                  xgifButton.textContent = "Create XGIF";
+                  xgifButton.id = `xgifButton_${tokenId}`;
+                  xgifButton.classList.add("xgif-button");
+                  xgifButton.onclick = () => {
+                    xgifFunction(svgImage, tokenName);
+                  };
+                  nftElement.appendChild(xgifButton);
+                }
               }
-           
-          }
-         }catch (error) {
-            console.error(error);
-            connectedAddressElement.innerHTML = `Connect to Ethereum Mainnet/`;
-            messageLabel.textContent = 'Error connecting. Check if connected to Ethereum Mainnet or if user denied connection.';
-            messageLabel.style.color = 'red';
-            messageLabel.style.display = 'block';
-        }
-      });
-        
-        disconnectButton.addEventListener('click', async () => {
-        try {
-          
-          connectedAddressElement.textContent = 'Disconnected.. Click to connect again/';
-          ownedNFTsElement.innerHTML = '';
+            } catch (error) {
+              console.error(error);
+              connectedAddressElement.innerHTML = `Connect to Ethereum Mainnet/`;
+              messageLabel.textContent =
+                "Error connecting. Check if connected to Ethereum Mainnet or if user denied connection.";
+              messageLabel.style.color = "red";
+              messageLabel.style.display = "block";
+            }
+          });
 
-          
-          connectButton.style.display = 'initial';
-          disconnectButton.style.display = 'none';
-          ownedLabel.style.display = 'none';
+          disconnectButton.addEventListener("click", async () => {
+            try {
+              connectedAddressElement.textContent =
+                "Disconnected.. Click to connect again/";
+              ownedNFTsElement.innerHTML = "";
 
-        } catch (error) {
-          console.error(error);
-        }
+              connectButton.style.display = "initial";
+              disconnectButton.style.display = "none";
+              ownedLabel.style.display = "none";
+            } catch (error) {
+              console.error(error);
+            }
+          });
+
+          const captureFunction = async (svgImage, tokenName) => {
+            loadingCircle.style.display = "block";
+            console.log("wee");
+            console.log(tokenName);
+            try {
+              const svgElement = svgImage;
+
+              console.log(svgElement);
+              if (!svgElement) return;
+
+              svgElement.style.width = "1000px";
+              svgElement.style.height = "1000px";
+              
+
+              const canvas = await html2canvas(svgElement, {
+                width: 1000,
+                height: 1000,
+              });
+
+              const downloadLink = document.createElement("a");
+
+              canvas.toBlob(async (blob) => {
+                downloadLink.href = URL.createObjectURL(blob);
+                downloadLink.download = tokenName;
+                downloadLink.click();
+
+                URL.revokeObjectURL(downloadLink.href);
+              }, "image/png");
+
+              loadingCircle.style.display = "none";
+              svgElement.style.width = "";
+              svgElement.style.height = "";
+            } catch (error) {
+              loadingCircle.style.display = "none";
+            }
+          };
+
+          const captureFramesFunction = async (svgImage, tokenName) => {
+            loadingCircle.style.display = "block";
+
+            try {
+              const svgElement = svgImage;
+              console.log(svgElement);
+              if (!svgElement) return;
+
+              const numberOfImages = 5;
+              const captureInterval = 1000;
+
+              const imagePromises = [];
+
+              for (let i = 0; i < numberOfImages; i++) {
+                await new Promise((resolve) =>
+                  setTimeout(resolve, captureInterval)
+                );
+
+                svgElement.style.width = "1000px";
+                svgElement.style.height = "1000px";
+
+                const canvas = await html2canvas(svgElement, {
+                  width: 1000,
+                  height: 1000,
+                });
+
+                const downloadLink = document.createElement("a");
+
+                const imagePromise = new Promise((resolve) => {
+                  canvas.toBlob((blob) => {
+                    downloadLink.href = URL.createObjectURL(blob);
+                    downloadLink.download = tokenName + `-${i + 1}.png`;
+                    downloadLink.click();
+
+                    URL.revokeObjectURL(downloadLink.href);
+                    resolve();
+                  }, "image/png");
+                });
+
+                imagePromises.push(imagePromise);
+              }
+              await Promise.all(imagePromises);
+              loadingCircle.style.display = "none";
+              svgElement.style.width = "";
+              svgElement.style.height = "";
+            } catch (error) {
+              loadingCircle.style.display = "none";
+            }
+          };
+
+          const gifFunction = async (svgImage, tokenName) => {
+            loadingCircle.style.display = "block";
+
+            try {
+              const svgElement = svgImage;
+              console.log(svgElement);
+              if (!svgElement) return;
+
+              const captureDuration = 5000;
+              const captureInterval = 1000 / 30;
+
+              const numberOfImages = Math.floor(
+                captureDuration / captureInterval
+              );
+
+              const imagePromises = [];
+
+              const svgWidth = 1000;
+              console.log(svgWidth);
+
+              const svgHeight = 1000;
+              console.log(svgHeight);
+
+              for (let i = 0; i < numberOfImages; i++) {
+                const canvas = document.createElement("canvas");
+                canvas.width = svgWidth;
+                canvas.height = svgHeight;
+
+                const context = canvas.getContext("2d");
+
+                svgElement.style.width = "1000px";
+                svgElement.style.height = "1000px";
+
+                context.drawImage(svgElement, 0, 0, svgWidth, svgHeight);
+
+                imagePromises.push(canvas);
+
+                await new Promise((resolve) =>
+                  setTimeout(resolve, captureInterval)
+                );
+              }
+
+              const gif = new GIF({
+                workers: 10,
+                quality: 10,
+                width: svgWidth,
+                height: svgHeight,
+              });
+
+              for (const canvas of imagePromises) {
+                gif.addFrame(canvas, { delay: captureInterval });
+              }
+
+              gif.on("finished", function (blob) {
+                const downloadLink = document.createElement("a");
+                downloadLink.href = URL.createObjectURL(blob);
+                downloadLink.download = tokenName + ".gif";
+
+                downloadLink.click();
+                loadingCircle.style.display = "none";
+                svgElement.style.width = "";
+                svgElement.style.height = "";
+              });
+
+              gif.render();
+            } catch (error) {
+              loadingCircle.style.display = "none";
+            }
+          };
+
+          gifButton.addEventListener("click", async () => {});
+
+          const xgifFunction = async (svgImage, tokenName) => {
+            loadingCircle.style.display = "block";
+
+            try {
+              const svgElement = svgImage;
+              console.log(svgElement);
+              if (!svgElement) return;
+
+              const captureDuration = 5000;
+              const captureInterval = 1000 / 30;
+
+              const numberOfImages = Math.floor(
+                captureDuration / captureInterval
+              );
+
+              const imagePromises = [];
+
+              const svgWidth = 500;
+              console.log(svgWidth);
+
+              const svgHeight = 500;
+              console.log(svgHeight);
+
+              for (let i = 0; i < numberOfImages; i++) {
+                const canvas = document.createElement("canvas");
+                canvas.width = svgWidth;
+                canvas.height = svgHeight;
+
+                const context = canvas.getContext("2d");
+
+                svgElement.style.width = "500px";
+                svgElement.style.height = "500px";
+
+                context.drawImage(svgElement, 0, 0, svgWidth, svgHeight);
+
+                imagePromises.push(canvas);
+
+                await new Promise((resolve) =>
+                  setTimeout(resolve, captureInterval)
+                );
+              }
+
+              const gif = new GIF({
+                workers: 10,
+                quality: 10,
+                width: svgWidth,
+                height: svgHeight,
+              });
+
+              for (const canvas of imagePromises) {
+                gif.addFrame(canvas, { delay: captureInterval });
+              }
+
+              gif.on("finished", function (blob) {
+                const downloadLink = document.createElement("a");
+                downloadLink.href = URL.createObjectURL(blob);
+                downloadLink.download = tokenName + ".gif";
+
+                downloadLink.click();
+                loadingCircle.style.display = "none";
+              });
+
+              gif.render();
+              svgElement.style.width = "";
+              svgElement.style.height = "";
+            } catch (error) {
+              loadingCircle.style.display = "none";
+            }
+          };
+
+          XgifButton.addEventListener("click", async () => {});
+        });
       });
-    });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
-
-
