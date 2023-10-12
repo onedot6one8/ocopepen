@@ -217,7 +217,7 @@
 
     .navigation {
       display: grid;
-      grid-template-columns: repeat(5, auto);
+      grid-template-columns: repeat(4, auto);
       gap: 50px;
       padding: 10px 15px;
       z-index: 2;
