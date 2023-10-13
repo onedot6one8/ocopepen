@@ -225,7 +225,7 @@ button:hover {
             const mintNFT = async (amount, payableAmount) => {
             try {
           
-              const transaction = await contract.methods.mint(amount).send({
+              const transaction = await contract.methods.claim(amount).send({
                 from: account,
                 value: web3.utils.toWei(payableAmount.toString(), "ether"),
               });
@@ -260,7 +260,7 @@ button:hover {
             
            
           
-            price = 0.015;
+            price = 0;
             const payableAmount = price * amount;
              console.log("price", payableAmount);
             mintNFT(amount, payableAmount);
