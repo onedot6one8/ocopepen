@@ -219,7 +219,7 @@ button:hover {
 
             const web3 = new Web3(window.ethereum);
             const contract = new web3.eth.Contract(contractAbi, contractAddress);
-            const OcOcontract = new web3.eth.Contract(OcOcontractAbi, OcOadd);
+            // const OcOcontract = new web3.eth.Contract(OcOcontractAbi, OcOadd);
             
             let totalSupply = await contract.methods.totalSupply().call()                                                  
             let maxSupply = await contract.methods.maxSupply().call()
