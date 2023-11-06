@@ -1,40 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KryptoPoker Holders</title>
+    <title>Holders</title>
     <link
       rel="icon"
-      href="https://cdn.glitch.global/eb9c3dd5-1fef-4767-851e-5c4382870df7/logo.png?v=1699291315939"
+      href="https://ipfs.io/ipfs/bafybeibxdkgk2skfquxdegafxugnqd64wwkqzvmroh3ptofff2mmhawxwe/Tlogo.svg"
       type="image/svg+xml"
     />
+    <link rel="stylesheet" href="styles.css" />
     <style>
-      
-    body {
-      margin: 0;
-      position: relative;
-    }
-      
-    .logo {
-      position: fixed;
-      top: 10px;
-      left: 10px; 
-      width: 250px; 
-      height: auto; 
-      z-index: 9999;
-    }
-
-    #video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
       .title {
         margin-bottom: 60%;
       }
@@ -42,7 +18,7 @@
       .container11 {
         text-align: center;
         position: absolute;
-        top: 40vh;
+        top: 60vh;
         left: 25%;
         width: 50%;
         padding: 20px;
@@ -66,7 +42,6 @@
         font-size: 24px;
         font-weight: bold;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-        color: gold;
       }
 
       @media (max-width: 840px) {
@@ -116,8 +91,8 @@
         font-size: 20px;
         font-weight: bold;
         margin-bottom: 20px;
-        color: goldenrod;
-        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+        color: white;
+        text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
       }
 
       .nft-card-image {
@@ -158,8 +133,8 @@
         text-decoration: none;
         padding: 10px 20px;
         font-size: 20px;
-        color: black;
-        background-color: goldenrod;
+        color: #ffffff;
+        background-color: #333333;
 
         border: none;
         border-radius: 6px;
@@ -181,10 +156,12 @@
       .texts {
         font-weight: bold;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-        color: goldenrod;
       }
 
-      .capture-button {
+      .capture-button,
+      .capture-frames-button,
+      .gif-button,
+      .xgif-button {
         text-decoration: none;
         padding: 10px 20px;
         font-size: 10px;
@@ -198,90 +175,15 @@
         z-index: 1;
         font-family: "Alegreya Sans";
         text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
-        margin-top: 10px;
+        margin-top: 10px; /* Add spacing between buttons */
       }
-      
-    .loading-circle {
-      position: absolute;
-      bottom: 60vh;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 3px solid #cccccc;
-      border-top: 3px solid #333333;
-      animation: spin 1s linear infinite;
-      display: none;
-      z-index: 999;
-    }
-
-    @keyframes spin {
-      0% { transform: translateX(-50%) rotate(0deg); }
-      100% { transform: translateX(-50%) rotate(360deg); }
-    }
-      
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: transparent;
-    }
-
-    .modal-content {
-      background-color: transparent;
-      margin: 15% auto;
-      padding: 20px;
-/*       border: 1px solid #888; */
-      width: 70%;
-    }
-      
-    .modal-text {
-      padding: 10px 20px;
-      font-size: 20px;
-      color: #ffffff;
-      background-color: #333333;
-      border: 1px solid goldenrod;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.3s;
-      position: relative;
-      z-index: 1;
-      font-family: "Alegreya Sans";
-      text-shadow: 0px 0px 10px goldenrod;
-      margin-top: 10px;
-    }
-
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .close:hover {
-      color: black;
-    }
     </style>
   </head>
   <body class="holders">
-    <a href="https://kryptopoker.io" target="_blank">
-      <img src="https://cdn.glitch.global/eb9c3dd5-1fef-4767-851e-5c4382870df7/logo.png?v=1699291315939" alt="Logo" class="logo">
-    </a>
-    <video id="video-background" autoplay muted loop>
-    <source src="https://cdn.glitch.global/eb9c3dd5-1fef-4767-851e-5c4382870df7/b2-flashy.mp4?v=1699289826917" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
     <div id="loadedContent"></div>
     <div class="container11">
       <h1 class="connected-address">
-        <span id="connectedAddress">Hello Hodlers..</span>
+        <span id="connectedAddress">Welcome..</span>
       </h1>
       <button class="connect-button" id="connectButton">Connect</button>
       <button
@@ -291,18 +193,9 @@
       >
         Disconnect
       </button>
-      <div class="loading-circle hide" id="loadingCircle"></div>
       <h2 class="texts" id="ownedLabel" style="display: none">You, Own:</h2>
       <div class="texts" id="messageLabel">Click to connect</div>
       <div class="image-grid" id="ownedNFTs" style="display: none"></div>
-    </div>
-    
-    <div id="revealModal" class="modal">
-      <div class="modal-content">
-        <span class="close" id="closeModal">&times;</span>
-        <h2 class="modal-text">Wait for the Reveal</h2>
-        <p class="modal-text">Watch this space for more surprise hands dealt to you.</p>
-      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -313,7 +206,9 @@
     <script src="https://cdn.jsdelivr.net/npm/jsgif@1.0.2/libgif.min.js"></script>
 
     <script>
-
+      $(function () {
+        $("#loadedContent").load("body.html", async function () {
+          $.getScript("scripts.js");
 
           const web3 = new Web3(window.ethereum);
 
@@ -334,8 +229,8 @@
               connectedAddressElement.textContent = `Hello, ${connectedAddress}`;
 
               const contractAddress =
-                "0xFeB643153e6BB355E18E6fFE9A8B7A39ed5445E0";
-              const contractAbi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"ApprovalCallerNotOwnerNorApproved","type":"error"},{"inputs":[],"name":"ApprovalQueryForNonexistentToken","type":"error"},{"inputs":[],"name":"BalanceQueryForZeroAddress","type":"error"},{"inputs":[],"name":"InvalidQueryRange","type":"error"},{"inputs":[],"name":"MintERC2309QuantityExceedsLimit","type":"error"},{"inputs":[],"name":"MintToZeroAddress","type":"error"},{"inputs":[],"name":"MintZeroQuantity","type":"error"},{"inputs":[{"internalType":"address","name":"operator","type":"address"}],"name":"OperatorNotAllowed","type":"error"},{"inputs":[],"name":"OwnerQueryForNonexistentToken","type":"error"},{"inputs":[],"name":"OwnershipNotInitializedForExtraData","type":"error"},{"inputs":[],"name":"TransferCallerNotOwnerNorApproved","type":"error"},{"inputs":[],"name":"TransferFromIncorrectOwner","type":"error"},{"inputs":[],"name":"TransferToNonERC721ReceiverImplementer","type":"error"},{"inputs":[],"name":"TransferToZeroAddress","type":"error"},{"inputs":[],"name":"URIQueryForNonexistentToken","type":"error"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"approved","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"operator","type":"address"},{"indexed":false,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"fromTokenId","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"toTokenId","type":"uint256"},{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"}],"name":"ConsecutiveTransfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[],"name":"OPERATOR_FILTER_REGISTRY","outputs":[{"internalType":"contract IOperatorFilterRegistry","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"},{"internalType":"bytes32[]","name":"proof","type":"bytes32[]"}],"name":"WLMint","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"WLsaleActive","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"approve","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"baseURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"explicitOwnershipOf","outputs":[{"components":[{"internalType":"address","name":"addr","type":"address"},{"internalType":"uint64","name":"startTimestamp","type":"uint64"},{"internalType":"bool","name":"burned","type":"bool"},{"internalType":"uint24","name":"extraData","type":"uint24"}],"internalType":"struct IERC721A.TokenOwnership","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"tokenIds","type":"uint256[]"}],"name":"explicitOwnershipsOf","outputs":[{"components":[{"internalType":"address","name":"addr","type":"address"},{"internalType":"uint64","name":"startTimestamp","type":"uint64"},{"internalType":"bool","name":"burned","type":"bool"},{"internalType":"uint24","name":"extraData","type":"uint24"}],"internalType":"struct IERC721A.TokenOwnership[]","name":"","type":"tuple[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getApproved","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxPerTransaction","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxPerWallet","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"numberMinted","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"price","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"publicMint","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"publicSaleActive","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"root","outputs":[{"internalType":"bytes32","name":"","type":"bytes32"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string","name":"baseURI_","type":"string"}],"name":"setBaseURI","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"newPrice","type":"uint256"}],"name":"setPrice","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"startPublicSale","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"startWLSale","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"stopPublicSale","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"stopWLSale","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"tokenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"tokensOfOwner","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"start","type":"uint256"},{"internalType":"uint256","name":"stop","type":"uint256"}],"name":"tokensOfOwnerIn","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"transferFrom","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"treasuryMint","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_maxPerTransaction","type":"uint256"}],"name":"updateMaxPerTransactionn","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_maxPerWallet","type":"uint256"}],"name":"updateMaxPerWallet","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes32","name":"newRoot","type":"bytes32"}],"name":"updateRoot","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"}];
+                "0x3480f26941688337f62C56895f7941508862c287";
+              const contractAbi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"ApprovalCallerNotOwnerNorApproved","type":"error"},{"inputs":[],"name":"ApprovalQueryForNonexistentToken","type":"error"},{"inputs":[],"name":"BalanceQueryForZeroAddress","type":"error"},{"inputs":[],"name":"InvalidQueryRange","type":"error"},{"inputs":[],"name":"MintERC2309QuantityExceedsLimit","type":"error"},{"inputs":[],"name":"MintToZeroAddress","type":"error"},{"inputs":[],"name":"MintZeroQuantity","type":"error"},{"inputs":[],"name":"OwnerQueryForNonexistentToken","type":"error"},{"inputs":[],"name":"OwnershipNotInitializedForExtraData","type":"error"},{"inputs":[],"name":"TransferCallerNotOwnerNorApproved","type":"error"},{"inputs":[],"name":"TransferFromIncorrectOwner","type":"error"},{"inputs":[],"name":"TransferToNonERC721ReceiverImplementer","type":"error"},{"inputs":[],"name":"TransferToZeroAddress","type":"error"},{"inputs":[],"name":"URIQueryForNonexistentToken","type":"error"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"approved","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"operator","type":"address"},{"indexed":false,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"uint256","name":"fromTokenId","type":"uint256"},{"indexed":false,"internalType":"uint256","name":"toTokenId","type":"uint256"},{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"}],"name":"ConsecutiveTransfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"_getNum","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_libee_addr","type":"address"}],"name":"_setAddr","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"uint256","name":"_newRandomNumber","type":"uint256"}],"name":"_setNum","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address[]","name":"recipients","type":"address[]"},{"internalType":"uint256[]","name":"amounts","type":"uint256[]"}],"name":"airdropTokens","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"approve","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"devMint","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"explicitOwnershipOf","outputs":[{"components":[{"internalType":"address","name":"addr","type":"address"},{"internalType":"uint64","name":"startTimestamp","type":"uint64"},{"internalType":"bool","name":"burned","type":"bool"},{"internalType":"uint24","name":"extraData","type":"uint24"}],"internalType":"struct IERC721A.TokenOwnership","name":"","type":"tuple"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"tokenIds","type":"uint256[]"}],"name":"explicitOwnershipsOf","outputs":[{"components":[{"internalType":"address","name":"addr","type":"address"},{"internalType":"uint64","name":"startTimestamp","type":"uint64"},{"internalType":"bool","name":"burned","type":"bool"},{"internalType":"uint24","name":"extraData","type":"uint24"}],"internalType":"struct IERC721A.TokenOwnership[]","name":"","type":"tuple[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"freezeMetadata","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256[]","name":"tokenIds","type":"uint256[]"}],"name":"freezeMetadataMultiple","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getApproved","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"isMetadataFrozen","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxPerTransaction","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxPerWallet","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"mint","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"numberMinted","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"price","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"saleActive","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"newPrice","type":"uint256"}],"name":"setPrice","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_maxPerTransaction","type":"uint256"}],"name":"setmaxPerTransaction","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_maxPerWallet","type":"uint256"}],"name":"setmaxPerWallet","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_maxSupply","type":"uint256"}],"name":"setmaxSupply","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"startSale","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"stopSale","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"tokenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"tokensOfOwner","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"start","type":"uint256"},{"internalType":"uint256","name":"stop","type":"uint256"}],"name":"tokensOfOwnerIn","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"transferFrom","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"quantity","type":"uint256"}],"name":"treasuryMint","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"}];
 
               const contractInstance = new web3.eth.Contract(
                 contractAbi,
@@ -355,9 +250,11 @@
                 ownedNFTsElement.style.display = "grid";
                 disconnectButton.style.display = "initial";
                 ownedLabel.style.display = "block";
-                // title.style.display = "block";
+                title.style.display = "block";
                 connectButton.style.display = "none";
                 messageLabel.style.display = "none";
+
+                document.getElementById("title").style.marginBottom = "1000px";
 
                 ownedNFTsElement.innerHTML = "";
 
@@ -367,16 +264,13 @@
 
                   const textElement = document.createElement("p");
                   textElement.classList.add("nft-card-text");
-                  
+
                   const tokenURI = await contractInstance.methods
                     .tokenURI(tokenId)
                     .call();
                   console.log(tokenURI);
 
-  
-                  const ipfsGatewayURL = tokenURI.replace('ipfs://', 'https://ipfs.io/ipfs/');
-                  const response = await fetch(ipfsGatewayURL);
-
+                  const response = await fetch(tokenURI);
                   const data = await response.json();
                   console.log(data);
 
@@ -399,7 +293,7 @@
                   ownedNFTsElement.appendChild(nftElement);
 
                   const linkElement = document.createElement('a');
-                  linkElement.href = `https://opensea.io/assets/ethereum/0xFeB643153e6BB355E18E6fFE9A8B7A39ed5445E0/${tokenId}`;
+                  linkElement.href = `https://opensea.io/assets/ethereum/0x3480f26941688337f62c56895f7941508862c287/${tokenId}`;
                   linkElement.target = "_blank"; 
                   linkElement.appendChild(svgImage);
                   nftElement.appendChild(linkElement);
@@ -412,9 +306,34 @@
                     captureFunction(svgImage, tokenName);
                   };
                   console.log(tokenName);
-                  
-                  nftElement.appendChild(captureButton);       
-                  
+                  nftElement.appendChild(captureButton);
+
+                  const captureFramesButton = document.createElement("button");
+                  captureFramesButton.textContent = "Capture Frames";
+                  captureFramesButton.id = `captureFramesButton_${tokenId}`;
+                  captureFramesButton.classList.add("capture-frames-button");
+                  captureFramesButton.onclick = () => {
+                    captureFramesFunction(svgImage, tokenName);
+                  };
+                  nftElement.appendChild(captureFramesButton);
+
+                  const gifButton = document.createElement("button");
+                  gifButton.textContent = "Create GIF";
+                  gifButton.id = `gifButton_${tokenId}`;
+                  gifButton.classList.add("gif-button");
+                  gifButton.onclick = () => {
+                    gifFunction(svgImage, tokenName);
+                  };
+                  nftElement.appendChild(gifButton);
+
+                  const xgifButton = document.createElement("button");
+                  xgifButton.textContent = "Create XGIF";
+                  xgifButton.id = `xgifButton_${tokenId}`;
+                  xgifButton.classList.add("xgif-button");
+                  xgifButton.onclick = () => {
+                    xgifFunction(svgImage, tokenName);
+                  };
+                  nftElement.appendChild(xgifButton);
                 }
               }
             } catch (error) {
@@ -445,58 +364,234 @@
             loadingCircle.style.display = "block";
             console.log("wee");
             console.log(tokenName);
-            
-            revealModal.style.display = "block";
-            loadingCircle.style.display = "none";
-            
-            closeModal.onclick = () => {
-            revealModal.style.display = "none";
-            loadingCircle.style.display = "none";
-          };
+            try {
+              const svgElement = svgImage;
 
-          // Close the modal when clicking outside the content
-          window.onclick = (event) => {
-            if (event.target === revealModal) {
-              revealModal.style.display = "none";
+              console.log(svgElement);
+              if (!svgElement) return;
+
+              svgElement.style.width = "1000px";
+              svgElement.style.height = "1000px";
+              
+
+              const canvas = await html2canvas(svgElement, {
+                width: 1000,
+                height: 1000,
+              });
+
+              const downloadLink = document.createElement("a");
+
+              canvas.toBlob(async (blob) => {
+                downloadLink.href = URL.createObjectURL(blob);
+                downloadLink.download = tokenName;
+                downloadLink.click();
+
+                URL.revokeObjectURL(downloadLink.href);
+              }, "image/png");
+
+              loadingCircle.style.display = "none";
+              svgElement.style.width = "";
+              svgElement.style.height = "";
+            } catch (error) {
               loadingCircle.style.display = "none";
             }
           };
-//             try {
-//               const svgElement = svgImage;
 
-//               console.log(svgElement);
-//               if (!svgElement) return;
+          const captureFramesFunction = async (svgImage, tokenName) => {
+            loadingCircle.style.display = "block";
 
-//               svgElement.style.width = "1000px";
-//               svgElement.style.height = "1000px";
-              
+            try {
+              const svgElement = svgImage;
+              console.log(svgElement);
+              if (!svgElement) return;
 
-//               const canvas = await html2canvas(svgElement, {
-//                 width: 1000,
-//                 height: 1000,
-//               });
+              const numberOfImages = 5;
+              const captureInterval = 1000;
 
-//               const downloadLink = document.createElement("a");
+              const imagePromises = [];
 
-//               canvas.toBlob(async (blob) => {
-//                 downloadLink.href = URL.createObjectURL(blob);
-//                 downloadLink.download = tokenName;
-//                 downloadLink.click();
+              for (let i = 0; i < numberOfImages; i++) {
+                await new Promise((resolve) =>
+                  setTimeout(resolve, captureInterval)
+                );
 
-//                 URL.revokeObjectURL(downloadLink.href);
-//               }, "image/png");
+                svgElement.style.width = "1000px";
+                svgElement.style.height = "1000px";
 
-//               loadingCircle.style.display = "none";
-//               svgElement.style.width = "";
-//               svgElement.style.height = "";
-//             } catch (error) {
-//               loadingCircle.style.display = "none";
-//             }
+                const canvas = await html2canvas(svgElement, {
+                  width: 1000,
+                  height: 1000,
+                });
+
+                const downloadLink = document.createElement("a");
+
+                const imagePromise = new Promise((resolve) => {
+                  canvas.toBlob((blob) => {
+                    downloadLink.href = URL.createObjectURL(blob);
+                    downloadLink.download = tokenName + `-${i + 1}.png`;
+                    downloadLink.click();
+
+                    URL.revokeObjectURL(downloadLink.href);
+                    resolve();
+                  }, "image/png");
+                });
+
+                imagePromises.push(imagePromise);
+              }
+              await Promise.all(imagePromises);
+              loadingCircle.style.display = "none";
+              svgElement.style.width = "";
+              svgElement.style.height = "";
+            } catch (error) {
+              loadingCircle.style.display = "none";
+            }
           };
-      
-      
 
+          const gifFunction = async (svgImage, tokenName) => {
+            loadingCircle.style.display = "block";
 
+            try {
+              const svgElement = svgImage;
+              console.log(svgElement);
+              if (!svgElement) return;
+
+              const captureDuration = 5000;
+              const captureInterval = 1000 / 30;
+
+              const numberOfImages = Math.floor(
+                captureDuration / captureInterval
+              );
+
+              const imagePromises = [];
+
+              const svgWidth = 1000;
+              console.log(svgWidth);
+
+              const svgHeight = 1000;
+              console.log(svgHeight);
+
+              for (let i = 0; i < numberOfImages; i++) {
+                const canvas = document.createElement("canvas");
+                canvas.width = svgWidth;
+                canvas.height = svgHeight;
+
+                const context = canvas.getContext("2d");
+
+                svgElement.style.width = "1000px";
+                svgElement.style.height = "1000px";
+
+                context.drawImage(svgElement, 0, 0, svgWidth, svgHeight);
+
+                imagePromises.push(canvas);
+
+                await new Promise((resolve) =>
+                  setTimeout(resolve, captureInterval)
+                );
+              }
+
+              const gif = new GIF({
+                workers: 10,
+                quality: 10,
+                width: svgWidth,
+                height: svgHeight,
+              });
+
+              for (const canvas of imagePromises) {
+                gif.addFrame(canvas, { delay: captureInterval });
+              }
+
+              gif.on("finished", function (blob) {
+                const downloadLink = document.createElement("a");
+                downloadLink.href = URL.createObjectURL(blob);
+                downloadLink.download = tokenName + ".gif";
+
+                downloadLink.click();
+                loadingCircle.style.display = "none";
+                svgElement.style.width = "";
+                svgElement.style.height = "";
+              });
+
+              gif.render();
+            } catch (error) {
+              loadingCircle.style.display = "none";
+            }
+          };
+
+          gifButton.addEventListener("click", async () => {});
+
+          const xgifFunction = async (svgImage, tokenName) => {
+            loadingCircle.style.display = "block";
+
+            try {
+              const svgElement = svgImage;
+              console.log(svgElement);
+              if (!svgElement) return;
+
+              const captureDuration = 5000;
+              const captureInterval = 1000 / 30;
+
+              const numberOfImages = Math.floor(
+                captureDuration / captureInterval
+              );
+
+              const imagePromises = [];
+
+              const svgWidth = 500;
+              console.log(svgWidth);
+
+              const svgHeight = 500;
+              console.log(svgHeight);
+
+              for (let i = 0; i < numberOfImages; i++) {
+                const canvas = document.createElement("canvas");
+                canvas.width = svgWidth;
+                canvas.height = svgHeight;
+
+                const context = canvas.getContext("2d");
+
+                svgElement.style.width = "500px";
+                svgElement.style.height = "500px";
+
+                context.drawImage(svgElement, 0, 0, svgWidth, svgHeight);
+
+                imagePromises.push(canvas);
+
+                await new Promise((resolve) =>
+                  setTimeout(resolve, captureInterval)
+                );
+              }
+
+              const gif = new GIF({
+                workers: 10,
+                quality: 10,
+                width: svgWidth,
+                height: svgHeight,
+              });
+
+              for (const canvas of imagePromises) {
+                gif.addFrame(canvas, { delay: captureInterval });
+              }
+
+              gif.on("finished", function (blob) {
+                const downloadLink = document.createElement("a");
+                downloadLink.href = URL.createObjectURL(blob);
+                downloadLink.download = tokenName + ".gif";
+
+                downloadLink.click();
+                loadingCircle.style.display = "none";
+              });
+
+              gif.render();
+              svgElement.style.width = "";
+              svgElement.style.height = "";
+            } catch (error) {
+              loadingCircle.style.display = "none";
+            }
+          };
+
+          XgifButton.addEventListener("click", async () => {});
+        });
+      });
     </script>
   </body>
 </html>
